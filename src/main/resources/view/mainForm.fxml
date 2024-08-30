@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="676.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainFormController">
+   <children>
+      <ImageView fitHeight="544.0" fitWidth="600.0" opacity="0.45" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/back.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#74b9ff" height="60.0" stroke="TRANSPARENT" strokeType="INSIDE" width="600.0" />
+      <Label layoutX="183.0" layoutY="4.0" text="My To Do List" textFill="#4b4b4b">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#67e5db35" height="300.0" layoutX="23.0" layoutY="79.0" stroke="#00000017" strokeType="INSIDE" width="262.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#67e5db35" height="300.0" layoutX="313.0" layoutY="79.0" stroke="#00000017" strokeType="INSIDE" width="262.0" />
+      <JFXTextField fx:id="addTaskField" layoutX="34.0" layoutY="335.0" prefHeight="25.0" prefWidth="176.0" promptText="Enter Task Here" />
+      <JFXButton layoutX="223.0" layoutY="335.0" onAction="#addTaskOnAction" style="-fx-background-color: #3ae374;" text="Add +" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <Label alignment="TOP_CENTER" layoutX="47.0" layoutY="94.0" prefHeight="17.0" prefWidth="215.0" text="Add Task" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_CENTER" layoutX="337.0" layoutY="94.0" prefHeight="17.0" prefWidth="215.0" text="Completed Task" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <ScrollPane layoutX="34.0" layoutY="129.0" prefWidth="240.0">
+         <VBox fx:id="vBox" prefHeight="200.0" prefWidth="240.0" />
+      </ScrollPane>
+      <ScrollPane layoutX="325.0" layoutY="129.0" prefWidth="240.0">
+         <content>
+            <VBox fx:id="vBox1" prefHeight="200.0" prefWidth="240.0" />
+         </content>
+      </ScrollPane>
+      <TableView fx:id="taskTable" layoutX="22.0" layoutY="431.0" prefHeight="200.0" prefWidth="329.0">
+        <columns>
+          <TableColumn fx:id="colTitle" prefWidth="328.0" text="Title" />
+        </columns>
+      </TableView>
+      <JFXButton layoutX="435.0" layoutY="519.0" onAction="#reloadOnAction" text="Reload" />
+   </children>
+</AnchorPane>
